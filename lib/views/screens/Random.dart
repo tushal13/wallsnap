@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:provider/provider.dart';
 import 'package:wallsnap/controllers/api_controller.dart';
-import 'package:wallsnap/views/widget/tile.dart';
+import 'package:wallsnap/views/components/tile.dart';
 
 class Random_WallSnap_Page extends StatelessWidget {
   const Random_WallSnap_Page({super.key});
@@ -64,7 +64,6 @@ class Random_WallSnap_Page extends StatelessWidget {
                       children: [
                         Image.asset(
                             'assets/images/loding-dots-8467284-6720621-unscreen.gif'),
-                        Text("Click on Gif To Load WallSnap's "),
                       ],
                     ),
                   ),

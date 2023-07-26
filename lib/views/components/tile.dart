@@ -16,7 +16,7 @@ class Tile extends StatelessWidget {
         color: Colors.white,
       ),
       child: FadeInImage.assetNetwork(
-        placeholder: 'assets/images/loding-dots-8467284-6720621-unscreen.gif',
+        placeholder: 'assets/images/loding.gif',
         image: imageUrl,
         fit: BoxFit.fill,
       ),

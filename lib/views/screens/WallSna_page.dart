@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:provider/provider.dart';
 import 'package:wallsnap/controllers/api_controller.dart';
-import 'package:wallsnap/views/widget/tile.dart';
+import 'package:wallsnap/views/components/tile.dart';
 
 class WallSnap_Page extends StatelessWidget {
   const WallSnap_Page({super.key});
@@ -29,7 +29,10 @@ class WallSnap_Page extends StatelessWidget {
                             itemCount: data.length,
                             itemBuilder: (context, index) {
                               return GestureDetector(
-                                onTap: (){Navigator.of(context).pushNamed('WallSnap',arguments: data[index]);},
+                                onTap: () {
+                                  Navigator.of(context).pushNamed('WallSnap',
+                                      arguments: data[index]);
+                                },
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(12),
                                   child: Tile(
@@ -56,7 +59,6 @@ class WallSnap_Page extends StatelessWidget {
                       children: [
                         Image.asset(
                             'assets/images/loding-dots-8467284-6720621-unscreen.gif'),
-                        Text("Click on Gif To Load WallSnap's "),
                       ],
                     ),
                   ),

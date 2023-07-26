@@ -9,6 +9,10 @@ class Apicontroller extends ChangeNotifier {
   List RandomWallSnap = [];
   Apicontroller() {
     Search();
+    wallsnap();
+    Popularwallsnap();
+    Featuredwallsnap();
+    Randomwallsnap();
   }
 
   Search({String val = "nature"}) async {

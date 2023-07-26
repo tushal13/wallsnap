@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
       title: 'WallSnap',
       theme: ThemeData(
           useMaterial3: true,
+          fontFamily: 'Medium',
           colorScheme: ColorScheme.light(
             primary: Colors.purple,
             secondary: Colors.lightBlue.shade400,

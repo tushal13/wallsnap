@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:provider/provider.dart';
 import 'package:wallsnap/controllers/api_controller.dart';
-import 'package:wallsnap/views/widget/tile.dart';
+import 'package:wallsnap/views/components/tile.dart';
 
 class Detail_List extends StatelessWidget {
   const Detail_List({super.key});

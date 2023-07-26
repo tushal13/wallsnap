@@ -20,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen>
   void initState() {
     super.initState();
     tabController = TabController(
-      initialIndex: 2,
+      initialIndex: 1,
       length: 5,
       vsync: this,
     );
@@ -32,9 +32,43 @@ class _HomeScreenState extends State<HomeScreen>
       body: NestedScrollView(
         headerSliverBuilder: (context, value) => [
           SliverAppBar(
-            title: const Text("WallSnap's"),
+            centerTitle: true,
+            // title: Row(
+            //   children: [
+            //     Image.asset(
+            //       'assets/images/Logo.png',
+            //       width: 33,
+            //       color: Colors.purple,
+            //     ),
+            //     const Text(
+            //       "W",
+            //       style: TextStyle(
+            //         color: Colors.grey,
+            //         fontFamily: 'FunCity',
+            //         fontSize: 24,
+            //       ),
+            //     ),
+            //     const Text("allSnap",
+            //         style: TextStyle(
+            //           color: Colors.grey,
+            //           fontFamily: 'FunCity',
+            //           fontSize: 24,
+            //         )),
+            //   ],
+            // ),
+            title: Padding(
+              padding: const EdgeInsets.only(top: 24.0),
+              child: Text(
+                'WallSnap',
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontFamily: 'FunCity',
+                  fontSize: 28,
+                ),
+              ),
+            ),
             pinned: true,
-            elevation: 0,
+            floating: true,
             actions: [
               IconButton(
                   onPressed: () {
@@ -42,7 +76,8 @@ class _HomeScreenState extends State<HomeScreen>
                   },
                   icon: Icon(Icons.search))
             ],
-            expandedHeight: 130,
+
+            expandedHeight: 150,
             bottom: TabBar(
               indicatorSize: TabBarIndicatorSize.label,
               controller: tabController,
@@ -68,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen>
         ],
         body: TabBarView(
           controller: tabController,
-          children: const [
+          children: [
             Collectione_Page(),
             WallSnap_Page(),
             Featured_WallSnap_Page(),
