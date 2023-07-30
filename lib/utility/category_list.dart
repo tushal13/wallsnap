@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wallsnap/modals/Category_model.dart';
+import '../modals/Category_model.dart';
 
 final List<CategoryItem> categories = [
   CategoryItem(

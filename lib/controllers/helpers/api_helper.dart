@@ -11,12 +11,12 @@ class ApiHelper {
     String query = "Ganpati",
     String orientation = "all",
     String order = "Popular",
-    // String image_type = "all",
-    bool safesearch = true,
-    bool editors_choice = false,
+    String image_type = "all",
+    bool safesearch = false,
+    bool editorschoice = false,
   }) async {
     String WallApi =
-        'https://pixabay.com/api/?key=38359285-b3dce53fdcc47898d599b68df&q=$query&orientation=$orientation&category=all&order=$order&safesearch=$safesearch&editors_choice=$editors_choice&per_page=200';
+        'https://pixabay.com/api/?key=38359285-b3dce53fdcc47898d599b68df&q=$query&orientation=$orientation&category=all&image_type=$image_type&order=$order&safesearch=$safesearch&editors_choice=$editorschoice&per_page=200';
 
     http.Response respons = await http.get(
       Uri.parse(

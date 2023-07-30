@@ -5,14 +5,14 @@ import 'package:wallsnap/views/screens/Random.dart';
 import 'package:wallsnap/views/screens/WallSna_page.dart';
 import 'package:wallsnap/views/screens/featuraed_page.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class TabScreen extends StatefulWidget {
+  const TabScreen({Key? key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<TabScreen> createState() => _TabScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen>
+class _TabScreenState extends State<TabScreen>
     with SingleTickerProviderStateMixin {
   late TabController tabController;
 
@@ -29,33 +29,10 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: NestedScrollView(
-        headerSliverBuilder: (context, value) => [
+      body: CustomScrollView(
+        slivers: [
           SliverAppBar(
             centerTitle: true,
-            // title: Row(
-            //   children: [
-            //     Image.asset(
-            //       'assets/images/Logo.png',
-            //       width: 33,
-            //       color: Colors.purple,
-            //     ),
-            //     const Text(
-            //       "W",
-            //       style: TextStyle(
-            //         color: Colors.grey,
-            //         fontFamily: 'FunCity',
-            //         fontSize: 24,
-            //       ),
-            //     ),
-            //     const Text("allSnap",
-            //         style: TextStyle(
-            //           color: Colors.grey,
-            //           fontFamily: 'FunCity',
-            //           fontSize: 24,
-            //         )),
-            //   ],
-            // ),
             title: Padding(
               padding: const EdgeInsets.only(top: 24.0),
               child: Text(
@@ -69,17 +46,9 @@ class _HomeScreenState extends State<HomeScreen>
             ),
             pinned: true,
             floating: true,
-            actions: [
-              IconButton(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed('Search');
-                  },
-                  icon: Icon(Icons.search))
-            ],
-
             expandedHeight: 150,
             bottom: TabBar(
-              indicatorSize: TabBarIndicatorSize.label,
+              indicatorSize: TabBarIndicatorSize.tab,
               controller: tabController,
               tabs: const [
                 Tab(
@@ -100,17 +69,19 @@ class _HomeScreenState extends State<HomeScreen>
               ],
             ),
           ),
+          SliverFillRemaining(
+            child: TabBarView(
+              controller: tabController,
+              children: [
+                Collectione_Page(),
+                WallSnap_Page(),
+                Featured_WallSnap_Page(),
+                Popular_WallSnap_Page(),
+                Random_WallSnap_Page(),
+              ],
+            ),
+          ),
         ],
-        body: TabBarView(
-          controller: tabController,
-          children: [
-            Collectione_Page(),
-            WallSnap_Page(),
-            Featured_WallSnap_Page(),
-            Popular_WallSnap_Page(),
-            Random_WallSnap_Page(),
-          ],
-        ),
       ),
     );
   }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:wallsnap/controllers/api_controller.dart';
-import 'package:wallsnap/utility/category_list.dart';
+
+import '../../controllers/api_controller.dart';
+import '../../utility/category_list.dart';
 
 class Collectione_Page extends StatelessWidget {
   const Collectione_Page({super.key});

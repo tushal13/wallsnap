@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:wallsnap/controllers/api_controller.dart';
-import 'package:wallsnap/views/screens/Detail_list_page.dart';
-import 'package:wallsnap/views/screens/WallSnapPreview.dart';
-import 'package:wallsnap/views/screens/Wallsnap.dart';
-import 'views/screens/home_screen.dart';
+import 'package:wallsnap/views/screens/Homescreen.dart';
+import 'package:wallsnap/views/screens/SpleshScreen.dart';
+import 'controllers/api_controller.dart';
+import 'utility/Theme/themes.dart';
+import 'views/screens/Detail_list_page.dart';
+import 'views/screens/WallSnapHomePreview.dart';
+import 'views/screens/WallSnapLockScreenPreview.dart';
+import 'views/screens/WallSnapSetting.dart';
+import 'views/screens/Wallsnap.dart';
 import 'views/screens/search_page.dart';
 
 void main() {
@@ -27,20 +31,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'WallSnap',
-      theme: ThemeData(
-          useMaterial3: true,
-          fontFamily: 'Medium',
-          colorScheme: ColorScheme.light(
-            primary: Colors.purple,
-            secondary: Colors.lightBlue.shade400,
-            brightness: Brightness.light,
-          )),
+      theme: Apptheme.lightTheme,
       routes: {
-        '/': (context) => const HomeScreen(),
+        '/': (context) => const SPLASH_SCREEN(),
+        'Home': (context) => const HomeScreen(),
+        'Setting': (context) => const WallSnapSetting(),
         'Wall': (context) => const Detail_List(),
         'Search': (context) => const SearchPage(),
         'WallSnap': (context) => const WallSnap(),
-        'WallSnapPreview': (context) => const WallSnapPreview(),
+        'HomeScreenPreview': (context) => const WallSnapHomeScreenPreview(),
+        'LockScreenPreview': (context) => const WallSnapLockScreenPreview(),
       },
     );
   }
