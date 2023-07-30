@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:async_wallpaper/async_wallpaper.dart';
+import 'package:provider/provider.dart';
+import 'package:wallsnap/controllers/api_controller.dart';
 
 class WallSnap extends StatelessWidget {
   const WallSnap({super.key});
@@ -50,20 +52,97 @@ class WallSnap extends StatelessWidget {
                               children: [
                                 IconButton(
                                     onPressed: () {
-                                      Navigator.of(context).pushNamed(
-                                          'WallSnapPreview',
-                                          arguments: data);
-                                    },
-                                    icon: Icon(Icons.preview)),
-                                IconButton(
-                                    onPressed: () {
-                                      AsyncWallpaper.setWallpaper(
-                                        url: data['largeImageURL'],
-                                        goToHome: true,
-                                        wallpaperLocation:
-                                            AsyncWallpaper.BOTH_SCREENS,
-                                        toastDetails: ToastDetails.success(),
-                                        errorToastDetails: ToastDetails.error(),
+                                      showDialog(
+                                        context: context,
+                                        builder: (BuildContext context) {
+                                          return Consumer<Apicontroller>(
+                                              builder: (context, pro, _) {
+                                            return AlertDialog(
+                                              title:
+                                                  Text('Choose Display Option'),
+                                              content: Column(
+                                                mainAxisSize: MainAxisSize.min,
+                                                children: [
+                                                  RadioListTile(
+                                                    title: Text('Lockscreen'),
+                                                    value: 'lockscreen',
+                                                    groupValue:
+                                                        pro.selectedOption,
+                                                    onChanged: (value) {
+                                                      pro.setSelectedOption(
+                                                          value!);
+                                                      AsyncWallpaper
+                                                          .setWallpaper(
+                                                        url: data[
+                                                            'largeImageURL'],
+                                                        goToHome: true,
+                                                        wallpaperLocation:
+                                                            AsyncWallpaper
+                                                                .LOCK_SCREEN,
+                                                        toastDetails:
+                                                            ToastDetails
+                                                                .success(),
+                                                        errorToastDetails:
+                                                            ToastDetails
+                                                                .error(),
+                                                      );
+                                                    },
+                                                  ),
+                                                  RadioListTile(
+                                                    title: Text('Homescreen'),
+                                                    value: 'homescreen',
+                                                    groupValue:
+                                                        pro.selectedOption,
+                                                    onChanged: (value) {
+                                                      pro.setSelectedOption(
+                                                          value!);
+                                                      AsyncWallpaper
+                                                          .setWallpaper(
+                                                        url: data[
+                                                            'largeImageURL'],
+                                                        goToHome: true,
+                                                        wallpaperLocation:
+                                                            AsyncWallpaper
+                                                                .HOME_SCREEN,
+                                                        toastDetails:
+                                                            ToastDetails
+                                                                .success(),
+                                                        errorToastDetails:
+                                                            ToastDetails
+                                                                .error(),
+                                                      );
+                                                    },
+                                                  ),
+                                                  RadioListTile(
+                                                    title: Text('Both'),
+                                                    value: 'both',
+                                                    groupValue:
+                                                        pro.selectedOption,
+                                                    onChanged: (value) {
+                                                      pro.setSelectedOption(
+                                                          value!);
+                                                      AsyncWallpaper
+                                                          .setWallpaper(
+                                                        url: data[
+                                                            'largeImageURL'],
+                                                        goToHome: true,
+                                                        wallpaperLocation:
+                                                            AsyncWallpaper
+                                                                .BOTH_SCREENS,
+                                                        toastDetails:
+                                                            ToastDetails
+                                                                .success(),
+                                                        errorToastDetails:
+                                                            ToastDetails
+                                                                .error(),
+                                                      );
+                                                    },
+                                                  ),
+                                                ],
+                                              ),
+                                            );
+                                          });
+                                        },
                                       );
                                     },
                                     icon: Icon(Icons
@@ -75,91 +154,135 @@ class WallSnap extends StatelessWidget {
                                         builder: (context) {
                                           return Container(
                                             color: Colors.grey.shade300,
-                                            height: 280,
+                                            height: 380,
                                             child: Column(
                                               children: [
                                                 Container(
-                                                    height: 60,
-                                                    child: Padding(
-                                                      padding:
-                                                          const EdgeInsets.all(
-                                                              10.0),
-                                                      child: Row(
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .center,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .spaceBetween,
-                                                        children: [
-                                                          Row(
-                                                            children: [
-                                                              Text(
-                                                                "${data['tags']}"
-                                                                    .toUpperCase(),
-                                                                style:
-                                                                    TextStyle(
-                                                                  color: Colors
-                                                                      .black87,
-                                                                  fontFamily:
-                                                                      'Medium',
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w700,
-                                                                  fontSize: 13,
-                                                                ),
+                                                  height: 60,
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            10.0),
+                                                    child: Row(
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .center,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      children: [
+                                                        Row(
+                                                          children: [
+                                                            Text(
+                                                              "${data['tags']}"
+                                                                  .toUpperCase(),
+                                                              style: TextStyle(
+                                                                color: Colors
+                                                                    .black87,
+                                                                fontFamily:
+                                                                    'Medium',
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w700,
+                                                                fontSize: 13,
                                                               ),
-                                                            ],
-                                                          ),
-                                                          Row(
-                                                            children: [
-                                                              IconButton(
-                                                                  onPressed:
-                                                                      () {
-                                                                    Navigator.of(context).pushNamed(
-                                                                        'WallSnapPreview',
-                                                                        arguments:
-                                                                            data);
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        Row(
+                                                          children: [
+                                                            IconButton(
+                                                              onPressed: () {
+                                                                showDialog(
+                                                                  context:
+                                                                      context,
+                                                                  builder:
+                                                                      (BuildContext
+                                                                          context) {
+                                                                    return Consumer<
+                                                                            Apicontroller>(
+                                                                        builder: (context,
+                                                                            pro,
+                                                                            _) {
+                                                                      return AlertDialog(
+                                                                        title: Text(
+                                                                            'Choose Display Option'),
+                                                                        content:
+                                                                            Column(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.min,
+                                                                          children: [
+                                                                            RadioListTile(
+                                                                              title: Text('Lockscreen'),
+                                                                              value: 'lockscreen',
+                                                                              groupValue: pro.selectedOption,
+                                                                              onChanged: (value) {
+                                                                                pro.setSelectedOption(value!);
+                                                                                AsyncWallpaper.setWallpaper(
+                                                                                  url: data['largeImageURL'],
+                                                                                  goToHome: true,
+                                                                                  wallpaperLocation: AsyncWallpaper.LOCK_SCREEN,
+                                                                                  toastDetails: ToastDetails.success(),
+                                                                                  errorToastDetails: ToastDetails.error(),
+                                                                                );
+                                                                              },
+                                                                            ),
+                                                                            RadioListTile(
+                                                                              title: Text('Homescreen'),
+                                                                              value: 'homescreen',
+                                                                              groupValue: pro.selectedOption,
+                                                                              onChanged: (value) {
+                                                                                pro.setSelectedOption(value!);
+                                                                                AsyncWallpaper.setWallpaper(
+                                                                                  url: data['largeImageURL'],
+                                                                                  goToHome: true,
+                                                                                  wallpaperLocation: AsyncWallpaper.HOME_SCREEN,
+                                                                                  toastDetails: ToastDetails.success(),
+                                                                                  errorToastDetails: ToastDetails.error(),
+                                                                                );
+                                                                              },
+                                                                            ),
+                                                                            RadioListTile(
+                                                                              title: Text('Both'),
+                                                                              value: 'both',
+                                                                              groupValue: pro.selectedOption,
+                                                                              onChanged: (value) {
+                                                                                pro.setSelectedOption(value!);
+                                                                                AsyncWallpaper.setWallpaper(
+                                                                                  url: data['largeImageURL'],
+                                                                                  goToHome: true,
+                                                                                  wallpaperLocation: AsyncWallpaper.BOTH_SCREENS,
+                                                                                  toastDetails: ToastDetails.success(),
+                                                                                  errorToastDetails: ToastDetails.error(),
+                                                                                );
+                                                                              },
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      );
+                                                                    });
                                                                   },
-                                                                  icon: Icon(Icons
-                                                                      .preview)),
-                                                              IconButton(
-                                                                  onPressed:
-                                                                      () {
-                                                                    AsyncWallpaper
-                                                                        .setWallpaper(
-                                                                      url: data[
-                                                                          'largeImageURL'],
-                                                                      goToHome:
-                                                                          true,
-                                                                      wallpaperLocation:
-                                                                          AsyncWallpaper
-                                                                              .BOTH_SCREENS,
-                                                                      toastDetails:
-                                                                          ToastDetails
-                                                                              .success(),
-                                                                      errorToastDetails:
-                                                                          ToastDetails
-                                                                              .error(),
-                                                                    );
-                                                                  },
-                                                                  icon: Icon(Icons
-                                                                      .settings_system_daydream_rounded)),
-                                                              //butome sheet with wallpaper ditailes
-                                                              IconButton(
-                                                                  onPressed:
-                                                                      () {
-                                                                    Navigator.of(
-                                                                            context)
-                                                                        .pop();
-                                                                  },
-                                                                  icon: Icon(Icons
-                                                                      .keyboard_double_arrow_down_outlined)),
-                                                            ],
-                                                          )
-                                                        ],
-                                                      ),
-                                                    )),
+                                                                );
+                                                              },
+                                                              icon: Icon(Icons
+                                                                  .settings_system_daydream_rounded),
+                                                            ),
+                                                            //butome sheet with wallpaper ditailes
+                                                            IconButton(
+                                                              onPressed: () {
+                                                                Navigator.of(
+                                                                        context)
+                                                                    .pop();
+                                                              },
+                                                              icon: Icon(Icons
+                                                                  .keyboard_double_arrow_down_outlined),
+                                                            ),
+                                                          ],
+                                                        )
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ),
                                                 Padding(
                                                   padding: const EdgeInsets.all(
                                                       10.0),
@@ -287,6 +410,139 @@ class WallSnap extends StatelessWidget {
                                                               ),
                                                             ),
                                                           ],
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsets.all(
+                                                      10.0),
+                                                  child: Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
+                                                    children: [
+                                                      Text(
+                                                        "Preview's"
+                                                            .toUpperCase(),
+                                                        style: TextStyle(
+                                                          color: Colors.black87,
+                                                          fontFamily: 'Medium',
+                                                          fontWeight:
+                                                              FontWeight.w700,
+                                                          fontSize: 13,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsets.all(
+                                                      10.0),
+                                                  child: Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
+                                                    children: [
+                                                      GestureDetector(
+                                                        onTap: () {
+                                                          Navigator.of(context)
+                                                              .pushNamed(
+                                                                  'LockScreenPreview',
+                                                                  arguments:
+                                                                      data);
+                                                        },
+                                                        child: Container(
+                                                          padding:
+                                                              EdgeInsets.only(
+                                                                  left: 10),
+                                                          decoration: BoxDecoration(
+                                                              color:
+                                                                  Colors.white,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          10)),
+                                                          width: 190,
+                                                          height: 38,
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .min,
+                                                            children: [
+                                                              Icon(Icons
+                                                                  .file_open),
+                                                              SizedBox(
+                                                                width: 5,
+                                                              ),
+                                                              Text(
+                                                                "LockScreen"
+                                                                    .toUpperCase(),
+                                                                style:
+                                                                    TextStyle(
+                                                                  color: Colors
+                                                                      .black87,
+                                                                  fontFamily:
+                                                                      'Medium',
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w700,
+                                                                  fontSize: 15,
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      GestureDetector(
+                                                        onTap: () {
+                                                          Navigator.of(context)
+                                                              .pushNamed(
+                                                                  'HomeScreenPreview',
+                                                                  arguments:
+                                                                      data);
+                                                        },
+                                                        child: Container(
+                                                          padding:
+                                                              EdgeInsets.only(
+                                                                  left: 10),
+                                                          decoration: BoxDecoration(
+                                                              color:
+                                                                  Colors.white,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          10)),
+                                                          width: 190,
+                                                          height: 38,
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .min,
+                                                            children: [
+                                                              Icon(Icons
+                                                                  .file_open),
+                                                              SizedBox(
+                                                                width: 5,
+                                                              ),
+                                                              Text(
+                                                                "HomeScreen"
+                                                                    .toUpperCase(),
+                                                                style:
+                                                                    TextStyle(
+                                                                  color: Colors
+                                                                      .black87,
+                                                                  fontFamily:
+                                                                      'Medium',
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w700,
+                                                                  fontSize: 15,
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
                                                         ),
                                                       ),
                                                     ],

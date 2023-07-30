@@ -1,8 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:provider/provider.dart';
-import 'package:wallsnap/controllers/api_controller.dart';
-import 'package:wallsnap/views/components/tile.dart';
+import '../../controllers/api_controller.dart';
+import '../components/tile.dart';
 
 class Random_WallSnap_Page extends StatelessWidget {
   const Random_WallSnap_Page({super.key});
@@ -11,11 +12,11 @@ class Random_WallSnap_Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: RefreshIndicator(
-        onRefresh: () => Provider.of<Apicontroller>(context, listen: false)
-            .Randomwallsnap(
-                val: 'motivation quotes',
-                order: 'latest',
-                orientation: 'vertical'),
+        onRefresh: () =>
+            Provider.of<Apicontroller>(context, listen: false).Randomwallsnap(
+          val: 'random',
+          order: 'latest',
+        ),
         child: Consumer<Apicontroller>(builder: (context, pro, _) {
           List data = pro.RandomWallSnap;
           return data.isNotEmpty
@@ -52,20 +53,11 @@ class Random_WallSnap_Page extends StatelessWidget {
                     ),
                   ),
                 )
-              : GestureDetector(
-                  onTap: () {
-                    pro.Randomwallsnap(
-                        val: 'others',
-                        order: 'popular',
-                        orientation: 'horizontal');
-                  },
-                  child: Center(
-                    child: Column(
-                      children: [
-                        Image.asset(
-                            'assets/images/loding-dots-8467284-6720621-unscreen.gif'),
-                      ],
-                    ),
+              : Center(
+                  child: Column(
+                    children: [
+                      Image.asset('assets/images/video-unscreen.gif'),
+                    ],
                   ),
                 );
         }),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class WallSnapPreview extends StatelessWidget {
-  const WallSnapPreview({super.key});
+class WallSnapHomeScreenPreview extends StatelessWidget {
+  const WallSnapHomeScreenPreview({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class WallSnapPreview extends StatelessWidget {
           ),
           Center(
             child: Image.asset(
-              "assets/images/Frame.png",
+              "assets/images/HomeScreenFrame.png",
               fit: BoxFit.fill,
               height: double.infinity,
             ),

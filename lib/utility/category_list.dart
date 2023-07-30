@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wallsnap/modals/Category_model.dart';
+import '../modals/Category_model.dart';
 
 final List<CategoryItem> categories = [
   CategoryItem(
@@ -18,6 +18,14 @@ final List<CategoryItem> categories = [
       name: 'Architecture',
       imageUrl:
           'https://cdn.pixabay.com/photo/2017/07/02/16/33/church-2464899_640.jpg'),
+  CategoryItem(
+      name: 'Love',
+      imageUrl:
+          'https://cdn.pixabay.com/photo/2018/01/16/08/41/heart-3085515_640.jpg'),
+  CategoryItem(
+      name: 'Minimal',
+      imageUrl:
+          'https://cdn.pixabay.com/photo/2017/03/07/15/38/bulb-2124338_1280.png'),
   CategoryItem(
       name: 'Technology',
       imageUrl:
@@ -38,6 +46,10 @@ final List<CategoryItem> categories = [
       name: 'Seasons',
       imageUrl:
           'https://cdn.pixabay.com/photo/2016/10/27/22/53/heart-1776746_640.jpg'),
+  CategoryItem(
+      name: 'sports',
+      imageUrl:
+          'https://cdn.pixabay.com/photo/2017/01/16/15/28/boxer-1984344_1280.jpg'),
   CategoryItem(
       name: 'Space',
       imageUrl:
@@ -75,9 +87,3 @@ final List<CategoryItem> categories = [
       imageUrl:
           'https://cdn.pixabay.com/photo/2016/01/09/18/27/camera-1130731_1280.jpg'),
 ];
-
-class WallsnapPageNotification extends Notification {
-  final String category;
-
-  WallsnapPageNotification(this.category);
-}
