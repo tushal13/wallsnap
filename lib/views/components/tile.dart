@@ -10,22 +10,18 @@ class Tile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          height: height,
-          decoration: BoxDecoration(
-            color: Colors.white,
-          ),
-          child: FadeInImage.assetNetwork(
-            placeholder: 'assets/images/loding.gif',
-            placeholderCacheWidth: 12,
-            placeholderFit: BoxFit.scaleDown,
-            image: imageUrl,
-            fit: BoxFit.fill,
-          ),
-        ),
-      ],
+    return Container(
+      height: height,
+      decoration: BoxDecoration(
+        color: Colors.white,
+      ),
+      child: FadeInImage.assetNetwork(
+        placeholder: 'assets/images/loading.gif',
+        placeholderCacheHeight: 10,
+        placeholderFit: BoxFit.cover,
+        image: imageUrl,
+        fit: BoxFit.fill,
+      ),
     );
   }
 }

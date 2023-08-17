@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:wallsnap/views/screens/Collection_page.dart';
 import 'package:wallsnap/views/screens/Popular_page.dart';
 import 'package:wallsnap/views/screens/Random.dart';
 import 'package:wallsnap/views/screens/WallSna_page.dart';
 import 'package:wallsnap/views/screens/featuraed_page.dart';
+
+import '../../controllers/api_controller.dart';
 
 class TabScreen extends StatefulWidget {
   const TabScreen({Key? key});
@@ -48,6 +51,9 @@ class _TabScreenState extends State<TabScreen>
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
+            backgroundColor: Provider.of<Apicontroller>(context).isDark
+                ? Colors.black87
+                : Colors.white,
             leading: currentIndex % 2 == 0
                 ? Container(
                     padding: EdgeInsets.only(left: 18),
@@ -75,26 +81,37 @@ class _TabScreenState extends State<TabScreen>
               '${titles[currentIndex]}',
               style: TextStyle(fontWeight: FontWeight.w700, color: Colors.grey),
             ),
-            pinned: true,
-            floating: true,
             bottom: TabBar(
               indicatorSize: TabBarIndicatorSize.tab,
+              unselectedLabelColor: Provider.of<Apicontroller>(context).isDark
+                  ? Colors.white
+                  : Colors.black87,
               controller: tabController,
               tabs: [
                 Tab(
-                  icon: Icon(Icons.menu_sharp),
+                  icon: Icon(
+                    Icons.menu_sharp,
+                  ),
                 ),
                 Tab(
-                  icon: Icon(Icons.ac_unit),
+                  icon: Icon(
+                    Icons.ac_unit,
+                  ),
                 ),
                 Tab(
-                  icon: Icon(Icons.local_fire_department),
+                  icon: Icon(
+                    Icons.local_fire_department,
+                  ),
                 ),
                 Tab(
-                  icon: Icon(Icons.star_rounded),
+                  icon: Icon(
+                    Icons.star_rounded,
+                  ),
                 ),
                 Tab(
-                  icon: Icon(Icons.history),
+                  icon: Icon(
+                    Icons.radar,
+                  ),
                 ),
               ],
             ),
@@ -112,16 +129,6 @@ class _TabScreenState extends State<TabScreen>
             ),
           ),
         ],
-      ),
-      drawer: Drawer(
-        backgroundColor: Colors.grey.withOpacity(0.5),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 40,
-            ),
-          ],
-        ),
       ),
     );
   }

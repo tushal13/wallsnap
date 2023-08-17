@@ -3,10 +3,6 @@ import '../modals/Category_model.dart';
 
 final List<CategoryItem> categories = [
   CategoryItem(
-      name: 'Nature',
-      imageUrl:
-          'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg'),
-  CategoryItem(
       name: 'Abstract',
       imageUrl:
           'https://cdn.pixabay.com/photo/2018/03/24/08/56/colorful-3256055_640.jpg'),
@@ -15,9 +11,29 @@ final List<CategoryItem> categories = [
       imageUrl:
           'https://cdn.pixabay.com/photo/2018/07/31/22/08/lion-3576045_640.jpg'),
   CategoryItem(
+      name: 'Anime Boy',
+      imageUrl:
+          'https://cdn.pixabay.com/photo/2018/10/21/13/01/toy-3762868_1280.jpg'),
+  CategoryItem(
+      name: 'Anime Girls',
+      imageUrl:
+          'https://cdn.pixabay.com/photo/2022/12/01/04/43/girl-7628308_1280.jpg'),
+  CategoryItem(
+      name: 'Artist',
+      imageUrl:
+          'https://cdn.pixabay.com/photo/2017/08/06/09/29/man-2590655_1280.jpg'),
+  CategoryItem(
+      name: 'Aesthetic',
+      imageUrl:
+          'https://cdn.pixabay.com/photo/2018/11/29/20/01/nature-3846403_640.jpg'),
+  CategoryItem(
       name: 'Architecture',
       imageUrl:
           'https://cdn.pixabay.com/photo/2017/07/02/16/33/church-2464899_640.jpg'),
+  CategoryItem(
+      name: 'Entertainment',
+      imageUrl:
+          'https://cdn.pixabay.com/photo/2017/08/10/01/44/concert-2616946_1280.jpg'),
   CategoryItem(
       name: 'Love',
       imageUrl:
@@ -54,6 +70,10 @@ final List<CategoryItem> categories = [
       name: 'Space',
       imageUrl:
           'https://cdn.pixabay.com/photo/2016/11/22/23/19/constellations-1851128_640.jpg'),
+  CategoryItem(
+      name: 'Nature',
+      imageUrl:
+          'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg'),
   CategoryItem(
       name: 'Travel',
       imageUrl:

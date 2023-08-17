@@ -54,12 +54,12 @@ class Random_WallSnap_Page extends StatelessWidget {
                   ),
                 )
               : Center(
-                  child: Column(
-                    children: [
-                      Image.asset('assets/images/video-unscreen.gif'),
-                    ],
-                  ),
-                );
+            child: Image.asset(
+              'assets/images/video-unscreen.gif',
+              color: Colors.purple,
+              width: 150,
+            ),
+          );
         }),
       ),
     );

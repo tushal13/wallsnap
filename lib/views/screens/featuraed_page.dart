@@ -15,7 +15,7 @@ class Featured_WallSnap_Page extends StatelessWidget {
       body: RefreshIndicator(
         onRefresh: () =>
             Provider.of<Apicontroller>(context, listen: false).Featuredwallsnap(
-          val: 'words',
+          val: 'Quotes',
           order: 'latest',
         ),
         child: Consumer<Apicontroller>(builder: (context, pro, _) {
@@ -55,13 +55,12 @@ class Featured_WallSnap_Page extends StatelessWidget {
                   ),
                 )
               : Center(
-                child: Column(
-                  children: [
-                    Image.asset(
-                        'assets/images/video-unscreen.gif'),
-                  ],
-                ),
-              );
+                  child: Image.asset(
+                    'assets/images/video-unscreen.gif',
+                    color: Colors.purple,
+                    width: 150,
+                  ),
+                );
         }),
       ),
     );

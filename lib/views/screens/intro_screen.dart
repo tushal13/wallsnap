@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 import 'package:lottie/lottie.dart';
+import 'package:provider/provider.dart';
+import 'package:wallsnap/controllers/intro_screen_controller.dart';
 
 class IntroScreen extends StatelessWidget {
   const IntroScreen({super.key});
@@ -157,7 +159,7 @@ class IntroScreen extends StatelessWidget {
                       alignment: Alignment.topLeft,
                       child: Text(
                         "So, what's new?".toUpperCase(),
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 28,
                             wordSpacing: 2,
@@ -167,7 +169,7 @@ class IntroScreen extends StatelessWidget {
                     const SizedBox(
                       height: 34,
                     ),
-                    Align(
+                    const Align(
                       alignment: Alignment.topLeft,
                       child: Text(
                         "A refreshed UI, faster wallpaper downloads, user\nprofile view, a ton of bug fixes and performance \nimprovements! I'll let you discover it all for yourself.",

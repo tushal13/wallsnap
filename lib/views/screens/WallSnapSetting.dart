@@ -12,7 +12,7 @@ class WallSnapSetting extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
-            Navigator.of(context).pushNamed('Home');
+            Navigator.of(context).pop();
           },
           icon: Icon(Icons.arrow_back_ios, color: Colors.grey),
         ),
@@ -133,13 +133,6 @@ class WallSnapSetting extends StatelessWidget {
                       color: Colors.grey,
                       fontSize: 18),
                 ),
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              Center(
-                child: Text('Made with ♥️ by Tushal Gopani',
-                    style: TextStyle(fontWeight: FontWeight.w700)),
               ),
             ],
           ),

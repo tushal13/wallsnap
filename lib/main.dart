@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:wallsnap/controllers/intro_screen_controller.dart';
 import 'package:wallsnap/views/screens/Homescreen.dart';
 import 'package:wallsnap/views/screens/Splash_Screen.dart';
+import 'package:wallsnap/views/screens/about_page.dart';
+import 'controllers/Connectivity_controller.dart';
+import 'controllers/Wallpaper_controller.dart';
 import 'controllers/api_controller.dart';
 import 'utility/Theme/themes.dart';
 import 'views/screens/Detail_list_page.dart';
@@ -12,12 +17,18 @@ import 'views/screens/Wallsnap.dart';
 import 'views/screens/intro_screen.dart';
 import 'views/screens/search_page.dart';
 
-void main() {
+void main() async {
   runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider(
           create: (context) => Apicontroller(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => ConnectivityController(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => WallController(),
         ),
       ],
       child: MyApp(),
@@ -32,7 +43,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'WallSnap',
-      theme: Apptheme.lightTheme,
+      theme: Provider.of<Apicontroller>(context).isDark
+          ? Apptheme.DarkTheme
+          : Apptheme.lightTheme,
       routes: {
         '/': (context) => const SPLASH_SCREEN(),
         'IntroScreen': (context) => const IntroScreen(),

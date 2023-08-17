@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wallsnap/modals/Color_modal.dart';
 
-List<ColorData> colorsList = [
+List<ColorData> ColorsList = [
   ColorData('Red', Colors.red),
   ColorData('Green', Colors.green),
   ColorData('Blue', Colors.blue),

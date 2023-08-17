@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:wallsnap/controllers/intro_screen_controller.dart';
 
 class SPLASH_SCREEN extends StatefulWidget {
   const SPLASH_SCREEN({Key? key}) : super(key: key);
@@ -21,11 +23,23 @@ class _SPLASH_SCREENState extends State<SPLASH_SCREEN> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Image(
-          image: AssetImage(
-            "assets/images/splesh.png",
+        child: Container(
+          child: Image.asset(
+            'assets/images/splesh.png',
           ),
-          height: 150,
+          width: 130,
+          height: 130,
+          decoration: BoxDecoration(
+              color: Colors.white70.withOpacity(0.9),
+              border: Border.all(width: 1, color: Colors.grey),
+              borderRadius: BorderRadius.circular(28),
+              boxShadow: [
+                BoxShadow(
+                    offset: Offset(2, 2),
+                    color: Colors.grey,
+                    spreadRadius: 0.8,
+                    blurRadius: 0.8)
+              ]),
         ),
       ),
     );

@@ -8,9 +8,8 @@ class Apptheme {
         primary: Colors.purple,
         secondary: Colors.lightBlue.shade400,
       ));
-  static ThemeData DarkTheme = ThemeData(
+  static ThemeData DarkTheme = ThemeData.dark().copyWith(
       useMaterial3: true,
-      fontFamily: 'Medium',
       colorScheme: ColorScheme.light(
         primary: Colors.deepPurple,
         secondary: Colors.blue.shade400,
