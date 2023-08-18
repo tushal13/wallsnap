@@ -17,6 +17,9 @@ class Detail_List extends StatelessWidget {
     String name = ModalRoute.of(context)!.settings.arguments as String;
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Provider.of<Apicontroller>(context).isDark
+              ? Colors.transparent.withOpacity(0)
+              : Colors.white,
           leading: IconButton(
             onPressed: () {
               Navigator.of(context).pop();

@@ -12,7 +12,7 @@ class WallSnapSetting extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
-            Navigator.of(context).pop();
+            Navigator.of(context).pushNamed("Home");
           },
           icon: Icon(Icons.arrow_back_ios, color: Colors.grey),
         ),
@@ -20,6 +20,9 @@ class WallSnapSetting extends StatelessWidget {
           'SETTINGS',
           style: TextStyle(fontWeight: FontWeight.w700, color: Colors.grey),
         ),
+        backgroundColor: Provider.of<Apicontroller>(context).isDark
+            ? Colors.transparent.withOpacity(0)
+            : Colors.white,
       ),
       body: Consumer<Apicontroller>(builder: (context, provider, _) {
         return SingleChildScrollView(

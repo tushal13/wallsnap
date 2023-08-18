@@ -89,11 +89,11 @@ class _HomeScreenState extends State<HomeScreen> {
         child: GNav(
           gap: 6,
           backgroundColor: Provider.of<Apicontroller>(context).isDark
-              ? Colors.white
+              ? Colors.transparent.withOpacity(0)
               : Colors.transparent.withOpacity(0),
           activeColor: Provider.of<Apicontroller>(context).isDark
-              ? Colors.black87
-              : Colors.white,
+              ? Colors.white
+              : Colors.black,
           tabBackgroundColor: Colors.purple,
           padding: EdgeInsets.all(16),
           tabs: [

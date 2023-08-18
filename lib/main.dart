@@ -18,6 +18,10 @@ import 'views/screens/intro_screen.dart';
 import 'views/screens/search_page.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences Pref = await SharedPreferences.getInstance();
+
+  bool isIntro = Pref.getBool("isIntro") ?? false;
   runApp(
     MultiProvider(
       providers: [
@@ -30,6 +34,9 @@ void main() async {
         ChangeNotifierProvider(
           create: (context) => WallController(),
         ),
+        ChangeNotifierProvider(
+          create: (context) => IntroScreenController(isIntro: isIntro),
+        ),
       ],
       child: MyApp(),
     ),
@@ -38,6 +45,7 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

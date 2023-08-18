@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../controllers/api_controller.dart';
 
 class ABOUTPAGE extends StatelessWidget {
   const ABOUTPAGE({super.key});
@@ -9,13 +12,16 @@ class ABOUTPAGE extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
-            Navigator.of(context).pop();
+            Navigator.of(context).pushNamed("Home");
           },
           icon: Icon(
             Icons.arrow_back_ios_rounded,
             color: Colors.grey,
           ),
         ),
+        backgroundColor: Provider.of<Apicontroller>(context).isDark
+            ? Colors.transparent.withOpacity(0)
+            : Colors.white,
         title: Text(
           'About',
           style: TextStyle(fontWeight: FontWeight.w700, color: Colors.grey),
@@ -38,100 +44,102 @@ class ABOUTPAGE extends StatelessWidget {
           Center(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const SizedBox(
-                    height: 90,
-                  ),
-                  Container(
-                    child: Image.asset(
-                      'assets/images/splesh.png',
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const SizedBox(
+                      height: 90,
                     ),
-                    width: 70,
-                    height: 70,
-                    decoration: BoxDecoration(
-                        color: Colors.white70.withOpacity(0.8),
-                        border: Border.all(width: 1, color: Colors.grey),
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                              offset: Offset(2, 2),
-                              color: Colors.grey,
-                              spreadRadius: 0.2,
-                              blurRadius: 0.3)
-                        ]),
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  Text(
-                    'WallSnap',
-                    style: TextStyle(
-                      fontSize: 34,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontFamily: 'FunCity',
+                    Container(
+                      child: Image.asset(
+                        'assets/images/splesh.png',
+                      ),
+                      width: 70,
+                      height: 70,
+                      decoration: BoxDecoration(
+                          color: Colors.white70.withOpacity(0.8),
+                          border: Border.all(width: 1, color: Colors.grey),
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                                offset: Offset(2, 2),
+                                color: Colors.grey,
+                                spreadRadius: 0.2,
+                                blurRadius: 0.3)
+                          ]),
                     ),
-                  ),
-                  Text(
-                    'v1,0,1',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontFamily: 'RBold',
+                    SizedBox(
+                      height: 15,
                     ),
-                  ),
-                  const SizedBox(
-                    height: 120,
-                  ),
-                  Text(
-                    'This is an open-source project and can be found on ',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontFamily: 'RBold',
+                    Text(
+                      'WallSnap',
+                      style: TextStyle(
+                        fontSize: 34,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontFamily: 'FunCity',
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    'GitHub',
-                    style: TextStyle(
-                      fontSize: 38,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontFamily: 'RBold',
+                    Text(
+                      'v1,0,1',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontFamily: 'RBold',
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    '          if you liked my work\n   show some ♥️and⭐the repo',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontFamily: 'RBold',
+                    const SizedBox(
+                      height: 120,
                     ),
-                  ),
-                  SizedBox(
-                    height: 150,
-                  ),
-                  Text(
-                    'Made with♥️by Tushal Gopani',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontFamily: 'RBold',
+                    Text(
+                      'This is an open-source project and can be found on ',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontFamily: 'RBold',
+                      ),
                     ),
-                  ),
-                ],
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      'GitHub',
+                      style: TextStyle(
+                        fontSize: 38,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontFamily: 'RBold',
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      '          if you liked my work\n   show some ♥️and⭐the repo',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontFamily: 'RBold',
+                      ),
+                    ),
+                    SizedBox(
+                      height: 150,
+                    ),
+                    Text(
+                      'Made with♥️by Tushal Gopani',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontFamily: 'RBold',
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

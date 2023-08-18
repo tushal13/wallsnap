@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wallsnap/controllers/intro_screen_controller.dart';
 
 class SPLASH_SCREEN extends StatefulWidget {
@@ -13,10 +14,11 @@ class SPLASH_SCREEN extends StatefulWidget {
 class _SPLASH_SCREENState extends State<SPLASH_SCREEN> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     Timer(Duration(seconds: 3), () {
-      Navigator.of(context).pushReplacementNamed('IntroScreen');
+      (Provider.of<IntroScreenController>(context, listen: false).isIntro)
+          ? Navigator.of(context).pushReplacementNamed('Home')
+          : Navigator.of(context).pushReplacementNamed('IntroScreen');
     });
   }
 

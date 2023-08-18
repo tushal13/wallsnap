@@ -15,54 +15,58 @@ class IntroScreen extends StatelessWidget {
         child: Center(
           child: Padding(
             padding: const EdgeInsets.all(18.0),
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              const SizedBox(
-                height: 150,
-              ),
-              Image.asset('assets/images/Logo.png'),
-              const SizedBox(
-                height: 80,
-              ),
-              Column(
-                children: [
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      'you are one of the first \nto try it out!'.toUpperCase(),
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
+            child: SingleChildScrollView(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const SizedBox(
+                      height: 150,
                     ),
-                  ),
-                  const SizedBox(
-                    height: 34,
-                  ),
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      "The app was re-written from scratch, I've selected a \nsmall portion of users to try it out. You are among those \nusers!",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                          fontFamily: 'Light'),
+                    Image.asset('assets/images/Logo.png'),
+                    const SizedBox(
+                      height: 80,
                     ),
-                  ),
-                  const SizedBox(
-                    height: 34,
-                  ),
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      "Please be kind as the app might be a little rough on its \nedges. if you find any bugs, please reach out to me on \nGmail-tushalgopani003@gmail.com",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                          fontFamily: 'Light'),
-                    ),
-                  ),
-                ],
-              )
-            ]),
+                    Column(
+                      children: [
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            'you are one of the first \nto try it out!'
+                                .toUpperCase(),
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 28),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 34,
+                        ),
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "The app was re-written from scratch, I've selected a \nsmall portion of users to try it out. You are among those \nusers!",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                fontFamily: 'Light'),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 34,
+                        ),
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "Please be kind as the app might be a little rough on its \nedges. if you find any bugs, please reach out to me on \nGmail-tushalgopani003@gmail.com",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                fontFamily: 'Light'),
+                          ),
+                        ),
+                      ],
+                    )
+                  ]),
+            ),
           ),
         ),
       ),
@@ -71,66 +75,71 @@ class IntroScreen extends StatelessWidget {
         child: Center(
           child: Padding(
             padding: const EdgeInsets.all(18.0),
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              const SizedBox(
-                height: 150,
-              ),
-              Lottie.network(
-                'https://lottie.host/743a8eea-6209-4aee-84d6-cd0da4924294/tNocQFhzp7.json',
-              ),
-              const SizedBox(
-                height: 110,
-              ),
-              Column(
-                children: [
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      "The Only wallpapwe app\nyou'll ever need.".toUpperCase(),
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 28,
-                          wordSpacing: 2,
-                          color: Colors.black),
+            child: SingleChildScrollView(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const SizedBox(
+                      height: 150,
                     ),
-                  ),
-                  const SizedBox(
-                    height: 34,
-                  ),
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      "Hi! Welcome to WallSnap 2.0 \nit was a lot of work to make this new version a reality, I\nhope you enjoy this new iteration!",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                          color: Colors.black,
-                          fontFamily: 'Light'),
+                    Lottie.network(
+                      'https://lottie.host/743a8eea-6209-4aee-84d6-cd0da4924294/tNocQFhzp7.json',
                     ),
-                  ),
-                  const SizedBox(
-                    height: 34,
-                  ),
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      "Thanks to all of those who donated in the previous\nversion.",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                          color: Colors.black,
-                          fontFamily: 'Light'),
+                    const SizedBox(
+                      height: 110,
                     ),
-                  ),
-                ],
-              )
-            ]),
+                    Column(
+                      children: [
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "The Only wallpapwe app\nyou'll ever need."
+                                .toUpperCase(),
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 28,
+                                wordSpacing: 2,
+                                color: Colors.black),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 34,
+                        ),
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "Hi! Welcome to WallSnap 2.0 \nit was a lot of work to make this new version a reality, I\nhope you enjoy this new iteration!",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: Colors.black,
+                                fontFamily: 'Light'),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 34,
+                        ),
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "Thanks to all of those who donated in the previous\nversion.",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: Colors.black,
+                                fontFamily: 'Light'),
+                          ),
+                        ),
+                      ],
+                    )
+                  ]),
+            ),
           ),
         ),
       ),
       GestureDetector(
         onDoubleTap: () {
+          Provider.of<IntroScreenController>(context, listen: false).isShow();
           Navigator.of(context).pushNamed('Home');
         },
         child: Container(
@@ -186,7 +195,7 @@ class IntroScreen extends StatelessWidget {
                     Align(
                       alignment: Alignment.topLeft,
                       child: Text(
-                        "More features like wallpaper editing are coming, stay \ntuned!",
+                        "More features like wallpaper editing are coming, stay tuned!",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
