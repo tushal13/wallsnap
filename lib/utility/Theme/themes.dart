@@ -11,7 +11,7 @@ class Apptheme {
   static ThemeData DarkTheme = ThemeData.dark().copyWith(
       useMaterial3: true,
       colorScheme: ColorScheme.light(
-        primary: Colors.deepPurple,
+        primary: Colors.purple.shade600,
         secondary: Colors.blue.shade400,
         brightness: Brightness.dark,
       ));

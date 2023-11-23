@@ -45,8 +45,8 @@ dependencies:
   font_awesome_flutter: ^10.5.0
   async_wallpaper: ^2.0.3
   shared_preferences: any
-  flutter_launcher_icons: ^0.13.1
-
+  flutter_launcher_icons: any
+  sizer: any
 
 dev_dependencies:
   flutter_test:

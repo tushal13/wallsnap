@@ -103,7 +103,9 @@ class WallSnapSetting extends StatelessWidget {
                   'More',
                   style: TextStyle(
                       fontWeight: FontWeight.w700,
-                      color: Colors.black,
+                      color: Provider.of<Apicontroller>(context).isDark
+                          ? Colors.white
+                          : Colors.black87,
                       fontSize: 24),
                 ),
               ),

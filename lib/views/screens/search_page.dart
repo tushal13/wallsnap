@@ -26,8 +26,14 @@ class SearchPage extends StatelessWidget {
                   child: TextField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(34)),
+                        borderRadius: BorderRadius.circular(34),
+                      ),
                       labelText: "Search Your WallSnap's",
+                      labelStyle: TextStyle(
+                        color: Provider.of<Apicontroller>(context).isDark
+                            ? Colors.white
+                            : Colors.black87,
+                      ),
                       prefixIcon: Icon(Icons.search),
                     ),
                     onSubmitted: (val) {

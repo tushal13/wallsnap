@@ -26,6 +26,9 @@ class Collectione_Page extends StatelessWidget {
                 letterSpacing: 2,
               ),
             ),
+            const SizedBox(
+              height: 12,
+            ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
@@ -61,6 +64,9 @@ class Collectione_Page extends StatelessWidget {
                     )).toList(),
               ),
             ),
+            const SizedBox(
+              height: 12,
+            ),
             Text(
               'Categories',
               style: TextStyle(
@@ -68,6 +74,9 @@ class Collectione_Page extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 letterSpacing: 2,
               ),
+            ),
+            const SizedBox(
+              height: 12,
             ),
             Column(
               children: categories
