@@ -58,7 +58,41 @@ One of WallSnap's standout features is the mesmerizing Liquid Swipe animation. N
 
 ## Screenshots
 
-Include a few screenshots or GIFs showcasing the app's UI and Liquid Swipe animation.
+
+<img src="https://github.com/tushal13/wallsnap/assets/113960162/51cade10-2dea-4121-97fb-453951bfde5f" alt="Image" width="200"> 
+
+<img src="https://github.com/tushal13/wallsnap/assets/113960162/4c341222-49f7-4177-bd80-4532fc825ebc" alt="Image" width="200">
+
+<img src="https://github.com/tushal13/wallsnap/assets/113960162/bb05d314-9df4-4b94-a4c1-11e87db2ea35" alt="Image" width="200">
+
+<img src="https://github.com/tushal13/wallsnap/assets/113960162/352b3ac6-ae3a-427f-8e9b-5cd028bc9c7a" alt="Image" width="200">
+
+<img src="https://github.com/tushal13/wallsnap/assets/113960162/a6a95b87-077f-459d-bb69-8a2f8e2f5f68" alt="Image" width="200">
+
+<img src="https://github.com/tushal13/wallsnap/assets/113960162/0d8ea9af-7f82-4463-846c-a779e340d455" alt="Image" width="200">
+
+<img src="https://github.com/tushal13/wallsnap/assets/113960162/3dbcf28c-d876-48bc-9288-4b312988ddcb" alt="Image" width="200">
+
+<img src="https://github.com/tushal13/wallsnap/assets/113960162/d1367242-ffc1-41cf-ba29-fe12dcb2846f" alt="Image" width="200">
+
+<img src="https://github.com/tushal13/wallsnap/assets/113960162/a81bc74d-4ed6-4ff2-a8c8-df7c916de62a" alt="Image" width="200">
+
+<img src="https://github.com/tushal13/wallsnap/assets/113960162/c5e7bdd2-4769-489e-a448-7a9f93e96d0c" alt="Image" width="200">
+
+<img src="https://github.com/tushal13/wallsnap/assets/113960162/dae77bf0-bbc8-493a-8427-cb9e24d019e4" alt="Image" width="200">
+
+<img src="https://github.com/tushal13/wallsnap/assets/113960162/d83c39e7-19a5-406b-9771-bcb23a79b92d" alt="Image" width="200">
+
+<img src="https://github.com/tushal13/wallsnap/assets/113960162/39dee0e2-d608-42ff-a1d5-dfdecc25fa57" alt="Image" width="200">
+
+<img src="https://github.com/tushal13/wallsnap/assets/113960162/6b900bf2-e7d6-4cb3-9706-26aa2982e9a1" alt="Image" width="200">
+
+<img src="https://github.com/tushal13/wallsnap/assets/113960162/d36d0cde-75ef-4818-a187-28911247e57c" alt="Image" width="200">
+
+## video
+
+
+
 
 ## Reviews
 
