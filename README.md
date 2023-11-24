@@ -111,23 +111,30 @@ Contributions to WallSnap are welcome! If you'd like to contribute, please follo
 
 WallSnap relies on several Flutter packages, including:
 
-- [flutter/material.dart](https://pub.dev/packages/flutter)
-- [provider](https://pub.dev/packages/provider)
-- [http](https://pub.dev/packages/http)
-- [cached_network_image](https://pub.dev/packages/cached_network_image)
-- [liquid_swipe](https://pub.dev/packages/liquid_swipe)
+- [provider](https://pub.dev/packages/provider) - State management
+- [connectivity_plus](https://pub.dev/packages/connectivity_plus) - Network connectivity
+- [http](https://pub.dev/packages/http) - HTTP requests
+- [google_nav_bar](https://pub.dev/packages/google_nav_bar) - Google's bottom navigation bar
+- [lottie](https://pub.dev/packages/lottie) - Lottie animations
+- [liquid_swipe](https://pub.dev/packages/liquid_swipe) - Liquid Swipe animation
+- [flutter_staggered_grid_view](https://pub.dev/packages/flutter_staggered_grid_view) - Staggered grid view
+- [font_awesome_flutter](https://pub.dev/packages/font_awesome_flutter) - FontAwesome icons
+- [async_wallpaper](https://pub.dev/packages/async_wallpaper) - Wallpaper handling
+- [shared_preferences](https://pub.dev/packages/shared_preferences) - Persistent storage
+- [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons) - App icons
+- [sizer](https://pub.dev/packages/sizer) - Responsive UI
 
-For the complete list of dependencies, check the `pubspec.yaml` file.
+For the complete list of dependencies and their versions, check the `pubspec.yaml` file.
 
 ## License
 
-WallSnap is licensed under the [MIT License](LICENSE).
+WallSnap is licensed under the [GT](LICENSE).
 
 ## Contact
 
 For any inquiries or feedback, feel free to reach out to the project maintainer:
 
-- **Your Name:** Your Email
+- **Tushal Gopani:** tushalgopani003@gmail.com
 
 ## Getting Started
 
@@ -137,7 +144,7 @@ To run WallSnap locally on your machine, follow these steps:
 
 2. Clone this repository using the following command:
    ```bash
-   git clone https://github.com/your-username/WallSnap.git
+   git clone https://github.com/tushal13/WallSnap.git
    ```
 
 3. Navigate to the project directory:
