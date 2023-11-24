@@ -91,8 +91,7 @@ One of WallSnap's standout features is the mesmerizing Liquid Swipe animation. N
 
 ## video
 
-
-
+https://github.com/tushal13/wallsnap/assets/113960162/04a76008-8aca-4d1a-92fd-e0ec09ed3eaa
 
 ## Reviews
 
